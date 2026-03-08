@@ -2,7 +2,7 @@
 -- Monotone olive/sage with text decoration for syntax
 
 vim.cmd("highlight clear")
-vim.g.colors_name = "mfd-gbl"
+vim.g.colors_name = "mfd-gbl-light"
 
 local c = {
 	bg = "#02B582", -- olive sage

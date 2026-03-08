@@ -2,14 +2,14 @@
 -- Monotone olive/sage with text decoration for syntax
 
 vim.cmd("highlight clear")
-vim.g.colors_name = "mfd-gbl"
+vim.g.colors_name = "mfd-gbl-dark"
 
 local c = {
 	bg = "#004F3A", -- olive sage
 	fg = "#02B582", -- dark forest green
 	dim = "#01694A", -- subtle olive (comments)
 	bright = "#009A70", -- near black (emphasis)
-	subtle = "#009A70", -- muted olive (line numbers)
+	subtle = "#01694A", -- muted olive (line numbers)
 	visual = "#01694A", -- selection (slightly darker than bg)
 	cursor = "#01694A", -- cursor line
 	border = "#009A70", -- window borders

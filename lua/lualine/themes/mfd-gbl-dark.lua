@@ -7,17 +7,17 @@ return {
 		c = { fg = "#02B582", bg = "#01694A" },
 	},
 	insert = {
-		a = { fg = "#004F3A", bg = "#F2F2F2", gui = "bold" },
+		a = { fg = "#02B582", bg = "#004F3A", gui = "bold" },
 		b = { fg = "#02B582", bg = "#01694A" },
 		c = { fg = "#02B582", bg = "#01694A" },
 	},
 	visual = {
-		a = { fg = "#F2F2F2", bg = "#01694A", gui = "bold" },
+		a = { fg = "#004F3A", bg = "#009A70", gui = "bold" },
 		b = { fg = "#02B582", bg = "#01694A" },
 		c = { fg = "#02B582", bg = "#01694A" },
 	},
 	replace = {
-		a = { fg = "#004F3A", bg = "#4A5B3A", gui = "bold" },
+		a = { fg = "#02B582", bg = "#01694A", gui = "bold" },
 		b = { fg = "#02B582", bg = "#01694A" },
 		c = { fg = "#02B582", bg = "#01694A" },
 	},
