@@ -10,8 +10,8 @@ local c = {
 	dim = "#01694A", -- subtle olive (comments)
 	bright = "#009A70", -- near black (emphasis)
 	subtle = "#01694A", -- muted olive (line numbers)
-	visual = "#01694A", -- selection (slightly darker than bg)
-	cursor = "#01694A", -- cursor line
+	visual = "#008560", -- selection (between dim and bright, dim text readable against it)
+	cursor = "#005A44", -- cursor line (between bg and dim, subtle)
 	border = "#009A70", -- window borders
 	float_bg = "#004F3A", -- floating windows
 }

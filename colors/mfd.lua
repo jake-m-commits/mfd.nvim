@@ -11,7 +11,7 @@ local c = {
   bright   = '#0D1D0D',  -- near black (emphasis)
   subtle   = '#687858',  -- muted olive (line numbers)
   visual   = '#6A7B59',  -- selection (slightly darker than bg)
-  cursor   = '#6A7B59',  -- cursor line
+  cursor   = '#848F72',  -- cursor line (slightly lighter than bg)
   border   = '#5A6B4A',  -- window borders
   float_bg = '#5A6B4A',  -- floating windows
 }
