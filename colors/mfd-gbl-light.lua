@@ -2,7 +2,7 @@
 -- Monotone olive/sage with text decoration for syntax
 
 vim.cmd("highlight clear")
-vim.g.colors_name = "mfd-gbl"
+vim.g.colors_name = "mfd-gbl-light"
 
 local c = {
 	bg = "#02B582", -- olive sage
@@ -10,15 +10,15 @@ local c = {
 	dim = "#009A70", -- subtle olive (comments)
 	bright = "#01694A", -- near black (emphasis)
 	subtle = "#01694A", -- muted olive (line numbers)
-	visual = "#009A70", -- selection (slightly darker than bg)
-	cursor = "#009A70", -- cursor line
+	visual = "#01694A", -- selection (dark — dim text clearly readable against it)
+	cursor = "#01A878", -- cursor line (between dim and bg, subtle)
 	border = "#01694A", -- window borders
 	float_bg = "#02B582", -- floating windows
 }
 
 local comment = c.dim
 if require("mfd").config.bright_comments then
-	comment = "#01694A"
+	comment = "#004F3A"
 end
 
 local function hi(group, opts)
