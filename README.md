@@ -80,10 +80,10 @@ Thermal fusion.
 
 ![MFD-FLIR-FUSION](screenshots/mfd-flir-fusion.png)
 
-### MFD-GBL / MFD-GBL-LIGHT
+### MFD-GBL-DARK / MFD-GBL-LIGHT
 Game Boy Light electroluminescence.
 
-![MFD-GBL](screenshots/mfd-gbl-dark.png)
+![MFD-GBL-DARK](screenshots/mfd-gbl-dark.png)
 ![MFD-GBL-LIGHT](screenshots/mfd-gbl-light.png)
 
 ## Installation
