@@ -1,16 +1,14 @@
 # mfd.nvim
 
-Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) — thanks for the beautiful work.
-
-Seventeen variants, from phosphor CRTs to night vision.
+Monotone colorschemes for Neovim. Seventeen variants, from phosphor CRTs to night vision display technologies. Inspired by the aesthetics of military MFDs (multi-function displays) and vintage computer terminals.
 
 > [!TIP]  
 > **New:**  
+> `accessibility_contrast` slider (0–10) for [WCAG-compliant contrast](#accessibility).  
 > [`mfd-lumon`](#mfd-lumon) Lumon Industries MDR terminal with CRT phosphor glow.  
 > `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.  
 > `mfd-flir` 4 thermal display schemes.  
 > `mfd-blackout` true black, ultra-low contrast for late night use.  
-> `bright_comments` option increases comment visibility for all themes.  
 
 
 ## Themes
@@ -42,7 +40,8 @@ Deep red.
 ![MFD-SCARLET](screenshots/mfd-scarlet.png)
 
 ### MFD-PAPER
-High contrast terminal.
+High contrast terminal. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) - thanks for the beautiful work.
+
 
 ![MFD-PAPER](screenshots/mfd-paper.png)
 
@@ -154,10 +153,39 @@ Call `setup()` before setting the colorscheme:
 
 ```lua
 require('mfd').setup({
-  bright_comments = true, -- increase comment visibility (default: false)
-  no_italic = true,       -- disable italic highlighting (default: false)
+  accessibility_contrast = 0, -- 0 (default) to 10 (max WCAG compliance)
+  no_italic = true,           -- disable italic highlighting (default: false)
+  bright_comments = true,     -- legacy: equivalent to accessibility_contrast = 4
 })
 ```
+
+## Accessibility
+
+`accessibility_contrast` lifts dim elements (comments, line numbers, inlay hints, borders) toward WCAG compliance while preserving each theme's hue.
+
+Even small values make a noticeable difference. You'll likely find a comfortable level well before reaching formal WCAG thresholds. Your environment brightness matters too; a theme like mfd-blackout is perfectly readable in a dark room but benefits from a higher level in daylight.
+
+| Theme | Level 5 | Level 10 |
+|---|---|---|
+| mfd | 1.5 | AA-UI (3.01) |
+| mfd-dark | AA-UI | AAA |
+| mfd-stealth | AA-UI | AAA |
+| mfd-amber | AA-UI | AAA |
+| mfd-mono | AA-UI | AAA |
+| mfd-scarlet | 2.7 | AAA |
+| mfd-paper | 2.6 | AAA |
+| mfd-hud | AA-UI | AAA |
+| mfd-nvg | AA-UI | AAA |
+| mfd-gbl-light | AA-UI | AAA |
+| mfd-gbl-dark | AA-UI | AAA |
+| mfd-lumon | AA-UI | AAA |
+| mfd-flir | 2.8 | AAA |
+| mfd-flir-bh | 2.6 | AAA |
+| mfd-flir-rh | 2.8 | AAA |
+| mfd-flir-fusion | 2.6 | AA (6.56) |
+| mfd-blackout | 2.6 | AAA |
+
+AA-UI ≥ 3.0 / AA ≥ 4.5 / AAA ≥ 7.0
 
 ## License
 
