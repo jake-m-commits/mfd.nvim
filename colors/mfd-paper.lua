@@ -16,12 +16,12 @@ local c = {
   float_bg = '#C5CFC2',  -- floating windows
 }
 
-local comment = c.dim
-if require('mfd').config.bright_comments then
-  comment = '#3A5038'
-end
+local cursor_dim = c.dim
+local mfd = require('mfd')
+c = mfd.compute_accessible_colors(c, mfd.get_contrast_level())
 
-local no_italic = require('mfd').config.no_italic
+local comment = c.dim
+local no_italic = mfd.config.no_italic
 local function hi(group, opts)
   if no_italic then opts.italic = nil end
   vim.api.nvim_set_hl(0, group, opts)
@@ -40,11 +40,11 @@ hi('lCursor',      { fg = c.bg, bg = c.bright })
 hi('CursorIM',     { fg = c.bg, bg = c.bright })
 hi('TermCursor',   { fg = c.bg, bg = c.bright })
 hi('TermCursorNC', { fg = c.bg, bg = c.dim })
-hi('CursorNormal',  { fg = c.fg, bg = c.dim })
+hi('CursorNormal',  { fg = c.fg, bg = cursor_dim })
 hi('CursorInsert',  { fg = c.fg, bg = '#6A7A68' })
 hi('CursorVisual',  { fg = c.bg, bg = '#3A6A3A' })
 hi('CursorReplace', { fg = c.bg, bg = '#0A3018' })
-hi('CursorCommand', { fg = c.fg, bg = c.dim })
+hi('CursorCommand', { fg = c.fg, bg = cursor_dim })
 hi('CursorLine',   { bg = c.cursor })
 hi('CursorColumn', { bg = c.cursor })
 hi('LineNr',       { fg = c.subtle })

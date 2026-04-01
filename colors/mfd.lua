@@ -16,12 +16,19 @@ local c = {
   float_bg = '#5A6B4A',  -- floating windows
 }
 
-local comment = c.dim
-if require('mfd').config.bright_comments then
-  comment = '#354828'
+local cursor_dim = c.dim
+local mfd = require('mfd')
+c = mfd.compute_accessible_colors(c, mfd.get_contrast_level())
+
+-- on this mid-tone theme, fg goes dark at high contrast. the cursor block must
+-- contrast against both bg and the dark text inside it. use a light olive that
+-- stands out from the bg but lets dark text show through.
+if mfd.get_contrast_level() > 0 then
+  cursor_dim = '#B0BFA0'
 end
 
-local no_italic = require('mfd').config.no_italic
+local comment = c.dim
+local no_italic = mfd.config.no_italic
 local function hi(group, opts)
   if no_italic then opts.italic = nil end
   vim.api.nvim_set_hl(0, group, opts)
@@ -40,11 +47,11 @@ hi('lCursor',      { fg = c.bg, bg = c.bright })
 hi('CursorIM',     { fg = c.bg, bg = c.bright })
 hi('TermCursor',   { fg = c.bg, bg = c.bright })
 hi('TermCursorNC', { fg = c.bg, bg = c.dim })
-hi('CursorNormal',  { fg = c.fg, bg = c.dim })
-hi('CursorInsert',  { fg = c.fg, bg = "#3A5A3A" })
+hi('CursorNormal',  { fg = c.bg, bg = cursor_dim })
+hi('CursorInsert',  { fg = c.bg, bg = cursor_dim })
 hi('CursorVisual',  { fg = c.bg, bg = '#3A5A3A' })
 hi('CursorReplace', { fg = c.bg, bg = '#1A3A1A' })
-hi('CursorCommand', { fg = c.fg, bg = c.dim })
+hi('CursorCommand', { fg = c.bg, bg = cursor_dim })
 hi('CursorLine',   { bg = c.cursor })
 hi('CursorColumn', { bg = c.cursor })
 hi('LineNr',       { fg = c.subtle })
