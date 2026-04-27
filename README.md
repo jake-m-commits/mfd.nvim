@@ -11,6 +11,8 @@ Monotone colorschemes for Neovim. Eighteen variants, from phosphor CRTs to night
 > `mfd-flir` 4 thermal display schemes.  
 > `mfd-blackout` true black, ultra-low contrast for late night use.  
 
+Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) - thanks for the beautiful work.
+
 
 ## Themes
 
@@ -41,8 +43,7 @@ Deep red.
 ![MFD-SCARLET](screenshots/mfd-scarlet.png)
 
 ### MFD-PAPER
-High contrast terminal. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) - thanks for the beautiful work.
-
+High contrast terminal. 
 
 ![MFD-PAPER](screenshots/mfd-paper.png)
 
